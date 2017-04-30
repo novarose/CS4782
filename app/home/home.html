@@ -1,1 +1,28 @@
-<div>Home Page</div>
+<!DOCTYPE html>
+<html ng-app="Authentication">
+<head>
+    <meta charset="utf-8">
+    <title>CS 4782</title>
+    <link href="/app/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/app/home/controller/login.controller.js"></script>
+</head>
+<body ng-controller="LoginController">
+    <div>Home Page</div>
+    <form id="loginForm" ng-submit="login()" role="form">
+        <table>
+            <tr ng-show="errorMessage">{{errorMessage}}</tr>
+            <tr>
+                <td>Username: </td>
+                <td><label for="username"></label><input type="text" id="username" name="username" ng-model="username" required/></td>
+            </tr>
+            <tr>
+                <td>Password: </td>
+                <td><label for="password"></label><input type="text" id="password" name="password" ng-model="password" required/></td>
+            </tr>
+        </table>
+        <input type="submit" ng-disabled="getData" id="submitBtn" value="Log In"/>
+    </form>
+
+    <script src="/app/bower_components/angular/angular.min.js"></script>
+</body>
+</html>
